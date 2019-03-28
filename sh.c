@@ -546,7 +546,6 @@ int sh( int argc, char **argv, char **envp )
         }
       }
       //free command buffers to be reallocated every loop
-      free(temp_cmd);
       free(commandline);
       for(j = 0; j < argsct; j++){
         free(args[j]);
@@ -557,6 +556,7 @@ int sh( int argc, char **argv, char **envp )
     else if(in_result == NULL){ 
       printf("\n");
     }
+    free(temp_cmd);
   }
   free(prompt);
   free(arg);
